@@ -14,7 +14,8 @@ interface EmailResult {
  */
 export async function sendBookingEmails(booking: BookingInput): Promise<EmailResult> {
   const apiKey = process.env.RESEND_API_KEY;
-  const clinicEmail = process.env.CLINIC_EMAIL || "arelidentalclinic@gmail.com";
+  const clinicEmail =
+    process.env.CLINIC_EMAIL || process.env.CLINIC_ALERT_EMAIL || "arelidentalclinic@gmail.com";
   const fromEmail = process.env.EMAIL_FROM || "Areli Dental Clinic <onboarding@resend.dev>";
 
   // Generate .ics calendar buffer
@@ -172,7 +173,8 @@ export async function sendBookingEmails(booking: BookingInput): Promise<EmailRes
  */
 export async function sendInquiryAlert(inquiry: ContactInput): Promise<EmailResult> {
   const apiKey = process.env.RESEND_API_KEY;
-  const clinicEmail = process.env.CLINIC_EMAIL || "arelidentalclinic@gmail.com";
+  const clinicEmail =
+    process.env.CLINIC_EMAIL || process.env.CLINIC_ALERT_EMAIL || "arelidentalclinic@gmail.com";
   const fromEmail = process.env.EMAIL_FROM || "Areli Dental Clinic <onboarding@resend.dev>";
 
   if (!apiKey) {

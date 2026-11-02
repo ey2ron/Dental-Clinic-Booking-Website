@@ -13,7 +13,8 @@ interface SheetAppendResult {
 export async function appendBookingToSheet(booking: BookingInput): Promise<SheetAppendResult> {
   const spreadsheetId = process.env.GOOGLE_SHEETS_SPREADSHEET_ID;
   const clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
-  const privateKey = process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY;
+  const privateKey =
+    process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY || process.env.GOOGLE_PRIVATE_KEY;
 
   // Format date and time for ledger display
   const submissionTimestamp = new Date().toLocaleString("en-US", {
