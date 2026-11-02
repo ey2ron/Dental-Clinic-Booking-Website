@@ -91,14 +91,26 @@ export function BeforeAfterSlider() {
             onTouchMove={handleTouchMove}
             className="relative h-[320px] sm:h-[380px] w-full rounded-2xl overflow-hidden shadow-soft select-none cursor-ew-resize border border-[#dde2d8]"
           >
-            {/* After Image (Full background) */}
-            <img
-              src="/images/clinic/smile-after1.png"
-              alt="Brightened, aligned confident smile"
-              className="absolute inset-0 size-full object-cover pointer-events-none"
-            />
+            {/* After Image Container (Full background) */}
+            <div className="absolute inset-0 pointer-events-none">
+              <img
+                src="/images/clinic/smile-after1.png"
+                alt="Brightened, aligned confident smile"
+                className="size-full object-cover"
+              />
 
-            {/* Before Image (Clipped overlay) */}
+              {/* After Label (Inside After Image div) */}
+              <div
+                className="absolute bottom-4 right-4 bg-[#f7f4ee]/90 backdrop-blur-xs px-2.5 py-1.5 rounded-lg border border-[#dde2d8] shadow-xs transition-opacity duration-150"
+                style={{ opacity: sliderPosition > 88 ? 0 : 1 }}
+              >
+                <span className="text-[10px] font-semibold text-[#526b50] tracking-wider uppercase whitespace-nowrap">
+                  AFTER
+                </span>
+              </div>
+            </div>
+
+            {/* Before Image Container (Clipped overlay) */}
             <div
               className="absolute inset-0 overflow-hidden pointer-events-none"
               style={{ width: `${sliderPosition}%` }}
@@ -110,20 +122,15 @@ export function BeforeAfterSlider() {
                 style={{ width: containerWidth ? `${containerWidth}px` : "100%" }}
               />
 
-            </div>
-
-            {/* Before Label (Top-Left) */}
-            <div className="absolute top-4 left-4 bg-[#f7f4ee]/90 backdrop-blur-xs px-2.5 py-1.5 rounded-lg border border-[#dde2d8] shadow-xs pointer-events-none">
-              <span className="text-[10px] font-semibold text-[#526b50] tracking-wider uppercase">
-                BEFORE 
-              </span>
-            </div>
-
-            {/* After Label (Bottom-Right) */}
-            <div className="absolute bottom-4 right-4 bg-[#f7f4ee]/90 backdrop-blur-xs px-2.5 py-1.5 rounded-lg border border-[#dde2d8] shadow-xs pointer-events-none">
-              <span className="text-[10px] font-semibold text-[#526b50] tracking-wider uppercase">
-                AFTER 
-              </span>
+              {/* Before Label (Inside Before Image div) */}
+              <div
+                className="absolute top-4 left-4 bg-[#f7f4ee]/90 backdrop-blur-xs px-2.5 py-1.5 rounded-lg border border-[#dde2d8] shadow-xs transition-opacity duration-150"
+                style={{ opacity: sliderPosition < 12 ? 0 : 1 }}
+              >
+                <span className="text-[10px] font-semibold text-[#526b50] tracking-wider uppercase whitespace-nowrap">
+                  BEFORE
+                </span>
+              </div>
             </div>
 
             {/* Slider Divider Line */}
