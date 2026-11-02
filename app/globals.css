@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 43 27% 95%; /* #f7f4ee */
+    --foreground: 128 21% 19%; /* #273c2b */
+    --brand-primary: #526b50;
+    --brand-dark: #273c2b;
+    --brand-accent: #6f8b6d;
+    --brand-sage: #e9eee5;
+    --brand-cream: #f7f4ee;
+    --brand-border: #dde2d8;
+    --brand-muted: #687167;
+    --brand-charcoal: #2d3748;
+    --brand-gold: #d4b688;
+  }
+
+  body {
+    background-color: var(--brand-cream);
+    color: var(--brand-dark);
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: rgba(82, 107, 80, 0.25);
+    color: #273c2b;
+  }
+}
+
