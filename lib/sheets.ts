@@ -68,10 +68,11 @@ async function getGoogleAccessToken(clientEmail: string, rawPrivateKey: string):
  * Conforms to 12 Columns (A to L)
  */
 export async function appendBookingToSheet(booking: BookingInput): Promise<SheetAppendResult> {
-  const spreadsheetId = process.env.GOOGLE_SHEETS_SPREADSHEET_ID;
-  const clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
-  const privateKey =
-    process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY || process.env.GOOGLE_PRIVATE_KEY;
+  const spreadsheetId = (process.env.GOOGLE_SHEETS_SPREADSHEET_ID || "").trim();
+  const clientEmail = (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL || "").trim();
+  const rawPrivateKey =
+    (process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY || process.env.GOOGLE_PRIVATE_KEY || "").trim();
+  const privateKey = rawPrivateKey;
 
   // Format date and time for ledger display
   const submissionTimestamp = new Date().toLocaleString("en-US", {
@@ -112,8 +113,33 @@ export async function appendBookingToSheet(booking: BookingInput): Promise<Sheet
   try {
     const accessToken = await getGoogleAccessToken(clientEmail, privateKey);
 
+    // 1. Fetch spreadsheet metadata to get the exact title of the first sheet
+    let sheetTitle = "Sheet1";
+    try {
+      const metaRes = await fetch(
+        `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}?fields=sheets.properties.title`,
+        {
+          headers: { Authorization: `Bearer ${accessToken}` },
+        }
+      );
+      if (metaRes.ok) {
+        const meta = await metaRes.json();
+        if (meta.sheets && meta.sheets[0]?.properties?.title) {
+          sheetTitle = meta.sheets[0].properties.title;
+        }
+      } else {
+        const metaErr = await metaRes.text();
+        console.error("[Google Sheets Meta Error]:", metaErr);
+        return { success: false, error: `Google Sheets Access Error: ${metaErr}` };
+      }
+    } catch (e) {
+      console.warn("Could not fetch sheet title metadata, falling back to 'Sheet1':", e);
+    }
+
+    // 2. Append row to the target sheet
+    const targetRange = encodeURIComponent(`${sheetTitle}!A:L`);
     const appendRes = await fetch(
-      `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/A1:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`,
+      `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${targetRange}:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`,
       {
         method: "POST",
         headers: {
@@ -129,10 +155,11 @@ export async function appendBookingToSheet(booking: BookingInput): Promise<Sheet
     if (!appendRes.ok) {
       const errorText = await appendRes.text();
       console.error("[Google Sheets API Error]:", errorText);
-      return { success: false, error: errorText };
+      return { success: false, error: `Append Failed (${appendRes.status}): ${errorText}` };
     }
 
     const result = await appendRes.json();
+    console.info(`[Google Sheets SUCCESS]: Appended row to ${result.updates?.updatedRange}`);
     return {
       success: true,
       rowId: result.updates?.updatedRange || `row_${Date.now()}`,

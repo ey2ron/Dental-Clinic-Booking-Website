@@ -84,7 +84,9 @@ export async function POST(req: NextRequest) {
         },
         icsContent,
         emailStatus: emailResult.success ? "sent" : "deferred",
+        emailError: emailResult.error || null,
         sheetStatus: sheetResult.success ? "recorded" : "deferred",
+        sheetError: sheetResult.error || null,
       },
       { status: 200 }
     );
