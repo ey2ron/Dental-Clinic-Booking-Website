@@ -37,14 +37,14 @@ export function generateIcsCalendar(details: CalendarEventDetails): string {
   const nowFormatted = formatIcsDate(new Date());
 
   const eventUid = `areli-booking-${Date.now()}@arelidentalclinic.com`;
-  const summary = `Dental Visit — Areli Dental Clinic (${serviceTitle})`;
-  const description = `Appointment request for ${patientName}\\nService: ${serviceTitle}\\nDoctor Preference: ${doctorName || "First Available"}\\nClinic: Areli Dental Clinic\\nAddress: 251 Molino Rd, San Nicolas II, Bacoor, Cavite 4102\\nContact: (0956) 150 5566`;
-  const location = `Areli Dental Clinic, 251 Molino Rd, San Nicolas II, Bacoor, Cavite 4102`;
+  const summary = `Dental Visit — ARELI Dental Clinic (${serviceTitle})`;
+  const description = `Appointment request for ${patientName}\\nService: ${serviceTitle}\\nDoctor Preference: ${doctorName || "First Available"}\\nClinic: ARELI Dental Clinic\\nAddress: 251 Molino Rd, San Nicolas II, Bacoor, Cavite 4102\\nContact: (0956) 150 5566`;
+  const location = `ARELI Dental Clinic, 251 Molino Rd, San Nicolas II, Bacoor, Cavite 4102`;
 
   const icsLines = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//Areli Dental Clinic//Appointment Scheduler//EN",
+    "PRODID:-//ARELI Dental Clinic//Appointment Scheduler//EN",
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
     "BEGIN:VEVENT",
@@ -59,7 +59,7 @@ export function generateIcsCalendar(details: CalendarEventDetails): string {
     "BEGIN:VALARM",
     "TRIGGER:-PT1H", // 1-hour reminder alarm per plan.md Section 5.1
     "ACTION:DISPLAY",
-    "DESCRIPTION:Reminder: Upcoming visit at Areli Dental Clinic in 1 hour",
+    "DESCRIPTION:Reminder: Upcoming visit at ARELI Dental Clinic in 1 hour",
     "END:VALARM",
     "END:VEVENT",
     "END:VCALENDAR",

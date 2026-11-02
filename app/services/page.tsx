@@ -15,9 +15,9 @@ import { CLINIC_INFO } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "Dental Services & Prices | Areli Dental Clinic Bacoor",
+  title: "Dental Services & Prices | ARELI Dental Clinic Bacoor",
   description:
-    "Dental cleaning, fillings, extractions, dentures, whitening & more. Transparent pricing. Book your visit at Areli Dental Clinic, Bacoor.",
+    "Dental cleaning, fillings, extractions, dentures, whitening & more. Transparent pricing. Book your visit at ARELI Dental Clinic, Bacoor.",
 };
 
 export default function ServicesPage() {

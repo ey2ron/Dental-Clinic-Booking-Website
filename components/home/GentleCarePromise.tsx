@@ -40,11 +40,11 @@ export function GentleCarePromise() {
         {/* Right Gentle Care Content (7 cols) */}
         <div className="lg:col-span-7 flex flex-col gap-6">
           <p className="text-[11px] font-semibold uppercase tracking-[2px] text-[#526b50]">
-            The Areli Promise
+            The ARELI Promise
           </p>
 
           <h2 className="font-serif text-[36px] sm:text-[44px] text-[#273c2b] tracking-[-0.8px] leading-[1.15] font-normal">
-            Why Patients Choose Areli
+            Why Patients Choose ARELI
           </h2>
 
           <p className="text-[15px] sm:text-[16px] leading-[1.65] text-[#687167]">

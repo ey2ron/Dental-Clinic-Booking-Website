@@ -27,7 +27,7 @@ export function TrustBadges() {
 
   return (
     <section
-      aria-label="Why Trust Areli"
+      aria-label="Why Trust ARELI"
       className="w-full bg-[#e9eee5] px-6 sm:px-12 md:px-24 py-6 border-y border-[#dde2d8]/60 overflow-x-auto"
     >
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 items-center min-w-[600px] sm:min-w-0">

@@ -16,7 +16,7 @@ export async function sendBookingEmails(booking: BookingInput): Promise<EmailRes
   const apiKey = process.env.RESEND_API_KEY;
   const clinicEmail =
     process.env.CLINIC_EMAIL || process.env.CLINIC_ALERT_EMAIL || "arelidentalclinic@gmail.com";
-  const fromEmail = process.env.EMAIL_FROM || "Areli Dental Clinic <onboarding@resend.dev>";
+  const fromEmail = process.env.EMAIL_FROM || "ARELI Dental Clinic <onboarding@resend.dev>";
 
   // Generate .ics calendar buffer
   const icsString = generateIcsCalendar({
@@ -31,7 +31,7 @@ export async function sendBookingEmails(booking: BookingInput): Promise<EmailRes
 
   if (!apiKey) {
     console.info("[Email Service: Dev / Staging Mode] RESEND_API_KEY not configured. Simulating dispatch:");
-    console.info(`-> To Patient (${booking.email}): "Your Appointment Request  — Areli Dental Clinic"`);
+    console.info(`-> To Patient (${booking.email}): "Your Appointment Request  — ARELI Dental Clinic"`);
     console.info(`-> To Clinic (${clinicEmail}): "🔔 NEW BOOKING: ${booking.fullName} — ${booking.date} at ${booking.timeSlot} (${booking.serviceTitle})"`);
     return { success: true, messageId: `mock_${Date.now()}` };
   }
@@ -41,7 +41,7 @@ export async function sendBookingEmails(booking: BookingInput): Promise<EmailRes
     const patientHtml = `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #273c2b; max-width: 600px; margin: 0 auto; padding: 28px; border: 1px solid #dde2d8; border-radius: 16px; background-color: #f7f4ee;">
         <div style="margin-bottom: 24px; text-align: center;">
-          <h2 style="color: #526b50; font-family: Georgia, serif; font-size: 26px; margin: 0 0 6px 0;">Areli Dental Clinic</h2>
+          <h2 style="color: #526b50; font-family: Georgia, serif; font-size: 26px; margin: 0 0 6px 0;">ARELI Dental Clinic</h2>
           <p style="color: #d4b688; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; margin: 0;">Gentle hands, Happy smiles </p>
         </div>
 
@@ -77,7 +77,7 @@ export async function sendBookingEmails(booking: BookingInput): Promise<EmailRes
 
         <hr style="border: none; border-top: 1px solid #dde2d8; margin: 24px 0;" />
         <p style="font-size: 12px; color: #8a9686; text-align: center; margin: 0;">
-          Areli Dental Clinic · 251 Molino Road, San Nicolas II, Bacoor, 4102 Cavite<br/>
+          ARELI Dental Clinic · 251 Molino Road, San Nicolas II, Bacoor, 4102 Cavite<br/>
           Direct Phone: (0956) 150 5566
         </p>
       </div>
@@ -121,7 +121,7 @@ export async function sendBookingEmails(booking: BookingInput): Promise<EmailRes
       body: JSON.stringify({
         from: fromEmail,
         to: [booking.email],
-        subject: "Your Appointment Request — Areli Dental Clinic",
+        subject: "Your Appointment Request — ARELI Dental Clinic",
         html: patientHtml,
         attachments: [
           {
@@ -175,7 +175,7 @@ export async function sendInquiryAlert(inquiry: ContactInput): Promise<EmailResu
   const apiKey = process.env.RESEND_API_KEY;
   const clinicEmail =
     process.env.CLINIC_EMAIL || process.env.CLINIC_ALERT_EMAIL || "arelidentalclinic@gmail.com";
-  const fromEmail = process.env.EMAIL_FROM || "Areli Dental Clinic <onboarding@resend.dev>";
+  const fromEmail = process.env.EMAIL_FROM || "ARELI Dental Clinic <onboarding@resend.dev>";
 
   if (!apiKey) {
     console.info("[Email Service: Dev / Staging Mode] RESEND_API_KEY not set. Simulating contact alert:");

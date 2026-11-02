@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { CLINIC_INFO } from "@/lib/constants";
@@ -64,28 +65,19 @@ export function Navbar() {
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-2.5 group">
           <div className="relative size-[44px] shrink-0 flex items-center justify-center">
-            <svg
-              className="size-full text-[#526b50] transition-transform group-hover:scale-105"
-              viewBox="0 0 40 44"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M19.4307 3.42513C11.4597 -3.2504 -1.06617 0.0873644 0.0725458 12.3258C1.21126 21.2266 4.6274 22.3391 6.90483 35.6902C9.18226 47.9287 13.7371 46.8161 16.0145 31.2399C17.1533 23.4517 21.7081 23.4517 22.8468 31.2399C25.1243 46.8161 29.6791 47.9287 31.9565 35.6902C34.234 22.3391 38.7888 21.2266 39.9275 11.2133C41.0663 0.0873644 28.5404 -3.2504 19.4307 3.42513Z"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <span className="absolute font-serif text-[13px] tracking-tight font-normal text-[#526b50]">
-              AR
-            </span>
+            <Image
+              src="/arelilogo.png"
+              alt="ARELI Dental Clinic Logo"
+              width={44}
+              height={44}
+              className="size-full object-contain rounded-full transition-transform group-hover:scale-105"
+              priority
+            />
           </div>
 
           <div className="flex flex-col leading-tight">
             <span className="font-serif text-[23px] sm:text-[25px] font-normal text-[#273c2b] tracking-wider">
-              Areli
+              ARELI
             </span>
             <span className="font-sans text-[7.5px] sm:text-[8px] tracking-[2.2px] text-[#526b50] font-medium uppercase -mt-0.5">
               DENTAL CLINIC

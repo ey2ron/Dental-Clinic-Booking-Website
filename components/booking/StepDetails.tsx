@@ -182,7 +182,10 @@ export function StepDetails({
                 onChange={() => onChangeField("selectedDoctorId", "any")}
                 className="accent-[#526b50]"
               />
-              <div className="flex flex-col">
+              <div className="size-9 rounded-full bg-white border border-[#dde2d8] flex items-center justify-center text-[#526b50] shrink-0">
+                <Stethoscope className="size-4" />
+              </div>
+                <div className="flex flex-col">
                 <span className="text-[13px] font-medium text-[#273c2b]">No Preference</span>
                 <span className="text-[11px] text-[#687167]">First available licensed dentist</span>
               </div>
@@ -204,6 +207,11 @@ export function StepDetails({
                   checked={selectedDoctorId === doc.id}
                   onChange={() => onChangeField("selectedDoctorId", doc.id)}
                   className="accent-[#526b50]"
+                />
+                <img
+                  src={doc.imageUrl}
+                  alt={doc.name}
+                  className="size-9 rounded-full object-contain p-0.5 border border-[#dde2d8] shrink-0 bg-white"
                 />
                 <div className="flex flex-col">
                   <span className="text-[13px] font-medium text-[#273c2b]">{doc.name}</span>

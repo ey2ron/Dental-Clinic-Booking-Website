@@ -5,9 +5,9 @@ import { CLINIC_INFO } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 
 export function MapStrip() {
-  const directionsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    "251 Molino Road, San Nicolas II, Bacoor, 4102 Cavite, Philippines"
-  )}`;
+  const directionsUrl = CLINIC_INFO.mapsUrl;
+
+
 
   return (
     <section className="w-full bg-white px-6 sm:px-12 md:px-24 py-16 sm:py-20 border-b border-[#dde2d8]">
@@ -16,8 +16,8 @@ export function MapStrip() {
         <div className="lg:col-span-7 order-2 lg:order-1">
           <div className="relative h-[340px] sm:h-[400px] w-full rounded-2xl overflow-hidden border border-[#dde2d8] shadow-sm bg-[#f7f4ee]">
             <iframe
-              title="Areli Dental Clinic Location Map"
-              src="https://maps.google.com/maps?q=251%20Molino%20Road,%20San%20Nicolas%20II,%20Bacoor,%20Cavite,%20Philippines&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              title="ARELI Dental Clinic Location Map"
+              src="https://maps.google.com/maps?q=Areli%20Dental%20Clinic,%20Bacoor,%20Cavite&t=&z=16&ie=UTF8&iwloc=&output=embed"
               className="size-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

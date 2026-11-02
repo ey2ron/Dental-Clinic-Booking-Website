@@ -19,11 +19,11 @@ const lora = Lora({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.arelidentalclinic.com"),
-  title: "Areli Dental Clinic | Gentle Dentist in Bacoor, Cavite",
+  title: "ARELI Dental Clinic | Gentle Dentist in Bacoor, Cavite",
   description:
     "Compassionate, anxiety-free dental care in Bacoor, Cavite. Open 7 days. Cleaning, fillings, extractions, dentures & whitening. Book now!",
   keywords: [
-    "Areli Dental Clinic",
+    "ARELI Dental Clinic",
     "dentist bacoor",
     "dentista bacoor",
     "dental clinic molino road",
@@ -32,13 +32,25 @@ export const metadata: Metadata = {
     "tooth extraction bacoor",
     "dentures bacoor cavite",
   ],
-  authors: [{ name: "Areli Dental Clinic" }],
+  authors: [{ name: "ARELI Dental Clinic" }],
+  icons: {
+    icon: "/arelilogo.png",
+    apple: "/arelilogo.png",
+  },
   openGraph: {
-    title: "Areli Dental Clinic | Gentle Dentist in Bacoor, Cavite",
+    title: "ARELI Dental Clinic | Gentle Dentist in Bacoor, Cavite",
     description:
       "Compassionate, anxiety-free dental care in Bacoor, Cavite. Open 7 days. Cleaning, fillings, extractions, dentures & whitening. Book now!",
     url: "https://www.arelidentalclinic.com",
-    siteName: "Areli Dental Clinic",
+    siteName: "ARELI Dental Clinic",
+    images: [
+      {
+        url: "/arelilogo.png",
+        width: 494,
+        height: 505,
+        alt: "ARELI Dental Clinic Logo",
+      },
+    ],
     locale: "en_PH",
     type: "website",
   },
@@ -47,7 +59,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Dentist",
-  "name": "Areli Dental Clinic",
+  "name": "ARELI Dental Clinic",
   "url": "https://www.arelidentalclinic.com",
   "telephone": "+639561505566",
   "address": {
@@ -78,6 +90,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${lora.variable}`}>
       <head>
+        <link rel="icon" href="/arelilogo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/arelilogo.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

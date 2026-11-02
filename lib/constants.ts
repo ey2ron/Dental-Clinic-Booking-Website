@@ -9,6 +9,7 @@ export interface ClinicInfo {
   hours: string;
   phone: string;
   phoneRaw: string;
+  mapsUrl: string;
   socials: {
     facebook: string;
     instagram: string;
@@ -16,7 +17,7 @@ export interface ClinicInfo {
 }
 
 export const CLINIC_INFO: ClinicInfo = {
-  name: "Areli Dental Clinic",
+  name: "ARELI Dental Clinic",
   tagline: "Gentle hands, Happy smiles ",
   heroEyebrow: "A CALMER KIND OF DENTAL CARE · BACOOR",
   heroTitle: "Gentle Hands, Happy Smiles",
@@ -27,6 +28,8 @@ export const CLINIC_INFO: ClinicInfo = {
   hours: "Monday – Sunday, 9:00 AM – 6:00 PM",
   phone: "(0956) 150 5566",
   phoneRaw: "+639561505566",
+  mapsUrl:
+    "https://www.google.com/maps/place/Areli+Dental+Clinic/@14.4352028,120.9746572,13z/data=!4m6!3m5!1s0x3397d330d9e532b5:0x6d67f4dfc143e319!8m2!3d14.4352059!4d120.9745599!16s%2Fg%2F11zjx9_5fn?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D",
   socials: {
     facebook: "https://www.facebook.com/profile.php?id=61581405039131",
     instagram: "https://www.instagram.com/areli_dentalclinic/",
@@ -237,8 +240,8 @@ export const DOCTORS: DoctorProfile[] = [
     personalPhilosophy:
       "Nobody should ever dread seeing the dentist. A soothing environment and honest, step-by-step conversation make all the difference.",
     interests: ["Preventive Dentistry", "Dental Phobia Care", "Oral Prophylaxis", "Aesthetic Restorations"],
-    imageUrl: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80",
-    isPlaceholder: true,
+    imageUrl: "/images/doctors/doc.jpg",
+    isPlaceholder: false,
   },
   {
     id: "dr-miguel-santos",
@@ -252,8 +255,8 @@ export const DOCTORS: DoctorProfile[] = [
     personalPhilosophy:
       "Dentistry is part engineering, part empathy. Our goal is to bring comfortable chewing and confident smiling back into your everyday life.",
     interests: ["Crowns & Bridges", "Full & Partial Dentures", "Complex Fillings", "Bite Realignment"],
-    imageUrl: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80",
-    isPlaceholder: true,
+    imageUrl: "/images/doctors/doc.jpg",
+    isPlaceholder: false,
   },
   {
     id: "dr-lea-cruz",
@@ -267,8 +270,8 @@ export const DOCTORS: DoctorProfile[] = [
     personalPhilosophy:
       "A positive childhood memory at the clinic builds a lifetime of oral health. We make sure every child leaves with pride and a smile.",
     interests: ["Pediatric Dentistry", "Pit & Fissure Sealants", "Fluoride Therapy", "Parental Dental Coaching"],
-    imageUrl: "https://images.unsplash.com/photo-1594824813568-19e344e24ef5?auto=format&fit=crop&w=800&q=80",
-    isPlaceholder: true,
+    imageUrl: "/images/doctors/doc.jpg",
+    isPlaceholder: false,
   },
 ];
 

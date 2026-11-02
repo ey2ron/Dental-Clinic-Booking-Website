@@ -4,9 +4,9 @@ import { HeartHandshake } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "About Us | Areli Dental Clinic — Bacoor, Cavite",
+  title: "About Us | ARELI Dental Clinic — Bacoor, Cavite",
   description:
-    "Learn about Areli Dental Clinic's gentle approach to dentistry. Located at 251 Molino Rd, Bacoor, Cavite. Open Mon–Sun 9AM–6PM.",
+    "Learn about ARELI Dental Clinic's gentle approach to dentistry. Located at 251 Molino Rd, Bacoor, Cavite. Open Mon–Sun 9AM–6PM.",
 };
 
 export default function AboutPage() {
@@ -49,7 +49,7 @@ export default function AboutPage() {
               Where gentle hands meet happy smiles.
             </p>
             <p className="text-[15px] sm:text-[16px] leading-[1.65] text-[#687167]">
-              We believe a healthy smile begins with feeling safe. At Areli Dental Clinic, gentle hands and honest conversations are at the heart of every visit.
+              We believe a healthy smile begins with feeling safe. At ARELI Dental Clinic, gentle hands and honest conversations are at the heart of every visit.
             </p>
             <div>
               <Link href="/team">
@@ -63,8 +63,8 @@ export default function AboutPage() {
           <div className="lg:col-span-6">
             <div className="relative w-full h-[380px] sm:h-[480px] rounded-2xl overflow-hidden shadow-soft bg-[#e9eee5] border border-[#dde2d8]">
               <img
-                src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1200&q=80"
-                alt="Welcoming, warm clinic lounge area with soft lighting [PLACEHOLDER]"
+                src="/images/clinic/treatment-area.jpg"
+                alt="ARELI Dental Clinic Reception & Check-in Counter"
                 className="size-full object-cover"
               />
             </div>
@@ -92,7 +92,7 @@ export default function AboutPage() {
               Make gentle oral health feel accessible, personal, and anxiety-free.
             </h2>
             <p className="text-[15px] sm:text-[16px] leading-[1.65] text-[#687167]">
-              [PLACEHOLDER — 2–3 paragraphs about why Areli Dental Clinic was founded on Molino Road, their mission for Bacoor families, and their patient-centered values].
+              [PLACEHOLDER — 2–3 paragraphs about why ARELI Dental Clinic was founded on Molino Road, their mission for Bacoor families, and their patient-centered values].
             </p>
             <p className="text-[14px] leading-[1.65] text-[#687167]">
               Whether it’s a routine dental cleaning or custom dentures, we explain each treatment in plain language and respect your comfort and budget.
@@ -151,12 +151,12 @@ export default function AboutPage() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {[
-            { title: "Reception & Check-in", img: "https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80" },
-            { title: "Treatment Room 1", img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80" },
-            { title: "Sterilization Suite", img: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" },
-            { title: "Consultation Lounge", img: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" },
-            { title: "Diagnostic Equipment", img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80" },
-            { title: "Building Exterior (Molino Rd)", img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" },
+            { title: "Reception & Check-in", img: "/images/clinic/reception.jpg" },
+            { title: "Treatment Room", img: "/images/clinic/treatment-area.jpg" },
+            { title: "Sterilization Suite", img: "/images/clinic/steralization.jpg" },
+            { title: "Lounge", img: "/images/clinic/lounge.jpg" },
+            { title: "Diagnostic Equipment", img: "/images/clinic/Diagnostic-Equipment.jpeg" },
+            { title: "Building Exterior (Molino Rd)", img: "/images/clinic/building-exterior.png" },
           ].map((item, idx) => (
             <div key={idx} className="flex flex-col gap-2">
               <div className="h-[240px] rounded-2xl overflow-hidden bg-[#e9eee5] border border-[#dde2d8]">
@@ -166,7 +166,7 @@ export default function AboutPage() {
                   className="size-full object-cover hover:scale-103 transition-transform duration-300"
                 />
               </div>
-              <span className="text-[12.5px] font-medium text-[#273c2b]">{item.title} [PLACEHOLDER]</span>
+              <span className="text-[12.5px] font-medium text-[#273c2b]">{item.title}</span>
             </div>
           ))}
         </div>

@@ -9,7 +9,7 @@ import { Testimonials } from "@/components/home/Testimonials";
 import { MapStrip } from "@/components/home/MapStrip";
 
 export const metadata: Metadata = {
-  title: "Areli Dental Clinic | Gentle Dentist in Bacoor, Cavite",
+  title: "ARELI Dental Clinic | Gentle Dentist in Bacoor, Cavite",
   description:
     "Compassionate, anxiety-free dental care in Bacoor, Cavite. Open 7 days. Cleaning, fillings, extractions, dentures & whitening. Book now!",
 };

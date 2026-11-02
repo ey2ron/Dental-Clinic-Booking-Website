@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { BookingFlow } from "@/components/booking/BookingFlow";
 
 export const metadata: Metadata = {
-  title: "Book an Appointment | Areli Dental Clinic Bacoor",
+  title: "Book an Appointment | ARELI Dental Clinic Bacoor",
   description:
-    "Schedule your dental visit online. Choose your service, pick a date, and we'll confirm your schedule promptly. Areli Dental Clinic, Bacoor, Cavite.",
+    "Schedule your dental visit online. Choose your service, pick a date, and we'll confirm your schedule promptly. ARELI Dental Clinic, Bacoor, Cavite.",
 };
 
 export default function BookPage() {

@@ -19,10 +19,10 @@ export default function TeamPage() {
   return (
     <div className="flex flex-col w-full">
       {/* React 19 / Next.js Head Hoisting per plan.md Section 9.2 */}
-      <title>Our Dentists | Areli Dental Clinic Bacoor</title>
+      <title>Our Dentists | ARELI Dental Clinic Bacoor</title>
       <meta
         name="description"
-        content="Meet the licensed dentists at Areli Dental Clinic. Gentle, skilled professionals committed to your comfort."
+        content="Meet the licensed dentists at ARELI Dental Clinic. Gentle, skilled professionals committed to your comfort."
       />
 
       {/* 1. Team Hero Header per plan.md Section 3.4 */}
@@ -53,11 +53,11 @@ export default function TeamPage() {
               className="bg-white rounded-2xl border border-[#dde2d8] overflow-hidden shadow-xs flex flex-col justify-between hover:border-[#6f8b6d] transition-all group"
             >
               {/* Doctor Portrait Header */}
-              <div className="relative h-[340px] w-full bg-[#e9eee5] overflow-hidden">
+              <div className="relative h-[340px] w-full bg-white border-b border-[#dde2d8] overflow-hidden flex items-center justify-center p-4">
                 <img
                   src={doc.imageUrl}
                   alt={doc.name}
-                  className="size-full object-cover object-top group-hover:scale-102 transition-transform duration-300"
+                  className="size-full object-contain group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
 
@@ -180,11 +180,11 @@ export default function TeamPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-12 gap-0 overflow-hidden">
               {/* Doctor Portrait Left (5 cols) */}
-              <div className="md:col-span-5 h-[320px] md:h-auto bg-[#e9eee5] relative overflow-hidden">
+              <div className="md:col-span-5 h-[320px] md:h-auto bg-white border-b md:border-b-0 md:border-r border-[#dde2d8] relative overflow-hidden flex items-center justify-center p-6">
                 <img
                   src={activeDoctor.imageUrl}
                   alt={activeDoctor.name}
-                  className="size-full object-cover"
+                  className="size-full object-contain"
                 />
               </div>
 

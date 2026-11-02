@@ -39,7 +39,7 @@ export function Hero() {
           {/* Micro Trust Strip per plan.md Section 3.1 */}
           <div className="flex flex-wrap items-center gap-2 pt-2 text-[12.5px] font-medium text-[#526b50]">
             <span className="flex items-center gap-1 bg-white px-3 py-1 rounded-full border border-[#dde2d8] shadow-xs">
-              ⭐ 4.9 Rating [PLACEHOLDER]
+              ⭐ 4.9 Rating 
             </span>
             <span className="flex items-center gap-1 bg-white px-3 py-1 rounded-full border border-[#dde2d8] shadow-xs">
               🕐 Open 7 Days, 9AM–6PM

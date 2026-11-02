@@ -94,14 +94,14 @@ export default function ContactPage() {
     }
   };
 
-  const directionsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    "251 Molino Road, San Nicolas II, Bacoor, 4102 Cavite, Philippines"
-  )}`;
+  const directionsUrl = CLINIC_INFO.mapsUrl;
+
+
 
   return (
     <div className="flex flex-col w-full">
       {/* React 19 Head Tag Hoisting per plan.md Section 9.2 */}
-      <title>Contact &amp; Location | Areli Dental Clinic — Molino Rd, Bacoor</title>
+      <title>Contact &amp; Location | ARELI Dental Clinic — Molino Rd, Bacoor</title>
       <meta
         name="description"
         content="Visit us at 251 Molino Rd, San Nicolas II, Bacoor, Cavite. Call (0956) 150 5566. Open daily 9AM–6PM."
@@ -129,8 +129,8 @@ export default function ContactPage() {
           <div className="lg:col-span-6">
             <div className="h-[360px] sm:h-[420px] rounded-2xl overflow-hidden border border-[#dde2d8] shadow-sm bg-[#f7f4ee]">
               <iframe
-                title="Areli Dental Clinic Map Location"
-                src="https://maps.google.com/maps?q=251%20Molino%20Road,%20San%20Nicolas%20II,%20Bacoor,%20Cavite,%20Philippines&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                title="ARELI Dental Clinic Map Location"
+                src="https://maps.google.com/maps?q=Areli%20Dental%20Clinic,%20Bacoor,%20Cavite&t=&z=16&ie=UTF8&iwloc=&output=embed"
                 className="size-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -381,7 +381,7 @@ export default function ContactPage() {
               </div>
               <h4 className="font-semibold text-[#273c2b] text-[15px]">By Private Car / Ride-hail</h4>
               <p className="text-[13px] text-[#687167] leading-relaxed">
-                Pin &ldquo;Areli Dental Clinic&rdquo; or &ldquo;251 Molino Road, San Nicolas II&rdquo; in Waze or Google Maps. Street parking available nearby.
+                Pin &ldquo;ARELI Dental Clinic&rdquo; or &ldquo;251 Molino Road, San Nicolas II&rdquo; in Waze or Google Maps. Street parking available nearby.
               </p>
             </div>
 

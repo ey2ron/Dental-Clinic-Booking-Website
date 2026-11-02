@@ -38,7 +38,7 @@ export function Testimonials() {
           </h2>
 
           <p className="text-[15px] sm:text-[16px] leading-[1.65] text-[#687167]">
-            Hear from families in Bacoor who experienced gentle, calm, and reassuring dental care at Areli.
+            Hear from families in Bacoor who experienced gentle, calm, and reassuring dental care at ARELI.
           </p>
 
           {/* CTA: Leave a Review on Facebook per plan.md Section 3.1 */}
