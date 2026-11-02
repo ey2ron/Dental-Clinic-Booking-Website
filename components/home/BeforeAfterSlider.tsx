@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export function BeforeAfterSlider() {
   const [sliderPosition, setSliderPosition] = React.useState(50);
+  const [containerWidth, setContainerWidth] = React.useState<number>(0);
   const containerRef = React.useRef<HTMLDivElement>(null);
   const isDragging = React.useRef(false);
 
@@ -29,6 +30,13 @@ export function BeforeAfterSlider() {
   };
 
   React.useEffect(() => {
+    const updateWidth = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.clientWidth);
+      }
+    };
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
     const handleMouseUp = () => {
       isDragging.current = false;
     };
@@ -39,6 +47,7 @@ export function BeforeAfterSlider() {
     window.addEventListener("mouseup", handleMouseUp);
     window.addEventListener("mousemove", handleMouseMove);
     return () => {
+      window.removeEventListener("resize", updateWidth);
       window.removeEventListener("mouseup", handleMouseUp);
       window.removeEventListener("mousemove", handleMouseMove);
     };
@@ -70,7 +79,7 @@ export function BeforeAfterSlider() {
           </div>
 
           <p className="text-[11px] text-[#687167] leading-[1.6] pt-1 italic">
-            [PLACEHOLDER — Illustrative slider for demonstration. Real patient before &amp; after photos will be published upon patient written consent per plan.md Part 12].
+            [Illustrative slider for demonstration. Real patient before &amp; after photos will be published upon patient written consent].
           </p>
         </div>
 
@@ -84,7 +93,7 @@ export function BeforeAfterSlider() {
           >
             {/* After Image (Full background) */}
             <img
-              src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80"
+              src="/images/clinic/smile-after1.png"
               alt="Brightened, aligned confident smile"
               className="absolute inset-0 size-full object-cover pointer-events-none"
             />
@@ -95,25 +104,25 @@ export function BeforeAfterSlider() {
               style={{ width: `${sliderPosition}%` }}
             >
               <img
-                src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80"
+                src="/images/clinic/smile-before1.png"
                 alt="Natural smile before treatment"
-                className="absolute inset-0 h-full max-w-none object-cover brightness-95 sepia-[0.25]"
-                style={{ width: containerRef.current?.clientWidth || "100%" }}
+                className="absolute inset-0 h-full max-w-none object-cover"
+                style={{ width: containerWidth ? `${containerWidth}px` : "100%" }}
               />
-              <div className="absolute inset-0 bg-[#c3b29a]/25" />
+
             </div>
 
             {/* Before Label (Top-Left) */}
             <div className="absolute top-4 left-4 bg-[#f7f4ee]/90 backdrop-blur-xs px-2.5 py-1.5 rounded-lg border border-[#dde2d8] shadow-xs pointer-events-none">
               <span className="text-[10px] font-semibold text-[#526b50] tracking-wider uppercase">
-                BEFORE · [PLACEHOLDER]
+                BEFORE 
               </span>
             </div>
 
             {/* After Label (Bottom-Right) */}
             <div className="absolute bottom-4 right-4 bg-[#f7f4ee]/90 backdrop-blur-xs px-2.5 py-1.5 rounded-lg border border-[#dde2d8] shadow-xs pointer-events-none">
               <span className="text-[10px] font-semibold text-[#526b50] tracking-wider uppercase">
-                AFTER · [PLACEHOLDER]
+                AFTER 
               </span>
             </div>
 

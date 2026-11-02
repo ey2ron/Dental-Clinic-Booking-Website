@@ -44,12 +44,12 @@ export function Testimonials() {
           {/* CTA: Leave a Review on Facebook per plan.md Section 3.1 */}
           <div>
             <a
-              href={CLINIC_INFO.socials.facebook}
+              href={CLINIC_INFO.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[#526b50] hover:underline"
             >
-              <span>Leave a Review on Facebook →</span>
+              <span>Leave a Review on Google Maps →</span>
             </a>
           </div>
 

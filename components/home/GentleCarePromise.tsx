@@ -30,7 +30,7 @@ export function GentleCarePromise() {
         <div className="lg:col-span-5 relative">
           <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[530px] rounded-2xl overflow-hidden shadow-soft bg-[#e9eee5]">
             <img
-              src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=80"
+              src="/images/clinic/gentlepromise.jpg"
               alt="Compassionate dentist speaking softly with patient in Bacoor clinic [PLACEHOLDER]"
               className="size-full object-cover"
             />
